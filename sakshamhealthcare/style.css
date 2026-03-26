@@ -1,0 +1,768 @@
+  html {
+        overflow-y: scroll;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: "Inter", sans-serif;
+        background: #0b0704;
+        color: #ece6df;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        width: 100%;
+      }
+
+      [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      /* Ultra Luxury Palette: Deep Burgundy, Antique Gold, Ebony, Ivory */
+      :root {
+        --gold-antique: #c5a028;
+        --gold-burnished: #b48c2c;
+        --gold-soft: #e4c580;
+        --burgundy-deep: #631d1d;
+        --burgundy-rich: #4a1212;
+        --ebony: #0c0907;
+        --charcoal-luxe: #1e1916;
+        --ivory-pure: #fef7e6;
+        --marble-bg: #15100c;
+        --shadow-royal:
+          0 30px 60px -20px rgba(0, 0, 0, 0.8),
+          0 0 0 1px rgba(197, 160, 40, 0.15);
+        --glow-gold: 0 0 30px rgba(197, 160, 40, 0.2);
+      }
+
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 64px;
+      }
+
+      section {
+        padding: 140px 0;
+        position: relative;
+      }
+
+      /* Ornate Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(11, 7, 4, 0.96);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(197, 160, 40, 0.3);
+        transition: all 0.4s;
+        padding: 20px 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1440px;
+        margin: auto;
+        padding: 0 64px;
+      }
+
+      .logo {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .logo-main {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        background: linear-gradient(
+          135deg,
+          var(--gold-antique) 0%,
+          var(--gold-soft) 70%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .logo-sub {
+        font-size: 0.6rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold-antique);
+        font-weight: 300;
+      }
+      .nav-links {
+        display: flex;
+        gap: 56px;
+        align-items: center;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 400;
+        color: #d4cdbc;
+        transition: 0.3s;
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .nav-links a:hover {
+        color: var(--gold-antique);
+      }
+      .btn-royal {
+        background: linear-gradient(
+          145deg,
+          var(--gold-antique) 0%,
+          var(--gold-burnished) 100%
+        );
+        color: #0b0704 !important;
+        padding: 20px 36px;
+        border-radius: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        transition: all 0.4s;
+        box-shadow: 0 5px 20px rgba(197, 160, 40, 0.3);
+      }
+      .btn-royal:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(197, 160, 40, 0.4);
+        background: linear-gradient(145deg, #dbb245 0%, #c49a2c 100%);
+      }
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--gold-antique);
+      }
+
+      /* Hero - Regal with Premium Image */
+      .hero-regal {
+        min-height: 100vh;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(11, 7, 4, 0.85) 0%,
+            rgba(11, 7, 4, 0.7) 100%
+          ),
+          url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+        background-size: cover;
+        background-position: center 30%;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-regal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          ellipse at 70% 30%,
+          rgba(31, 20, 12, 0.4) 0%,
+          rgba(7, 4, 3, 0.6) 100%
+        );
+        pointer-events: none;
+      }
+      .hero-grid-royal {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+      }
+      .royal-badge {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.9rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: var(--gold-antique);
+        margin-bottom: 28px;
+        border-left: 2px solid var(--gold-antique);
+        padding-left: 20px;
+      }
+      .hero-content h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5.2rem;
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        /* border: 2px solid red; */
+        color: var(--ivory-pure);
+      }
+      .hero-content h1 span {
+        color: var(--gold-antique);
+        font-style: italic;
+      }
+      .hero-desc-royal {
+        font-size: 1rem;
+        color: #e0d6c4;
+        margin: 32px 0 40px;
+        max-width: 80%;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .stat-royal {
+        display: flex;
+        gap: 70px;
+        margin-top: 48px;
+      }
+      .stat-item-royal .num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--gold-antique);
+      }
+      .hero-ornament {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(197, 160, 40, 0.4);
+        padding: 48px;
+        text-align: center;
+        border-radius: 4px;
+        transition: all 0.3s;
+      }
+      .hero-ornament:hover {
+        border-color: var(--gold-antique);
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      /* Section Titles - Ornate */
+      .section-eyebrow-royal {
+        color: var(--gold-antique);
+        font-size: 0.7rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        font-weight: 300;
+      }
+      .section-title-royal {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.6rem;
+        font-weight: 500;
+        color: var(--ivory-pure);
+        margin-bottom: 24px;
+      }
+      .royal-divider {
+        width: 100px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold-antique), transparent);
+        margin: 28px 0;
+      }
+
+      /* Service Cards - Marble Texture */
+      .service-grid-royal {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 48px;
+        margin-top: 70px;
+      }
+      .card-royal {
+        background: rgba(30, 22, 18, 0.7);
+        backdrop-filter: blur(8px);
+        border-radius: 0;
+        padding: 48px 36px;
+        transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        border: 1px solid rgba(197, 160, 40, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .card-royal::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold-antique);
+        transition: width 0.4s;
+      }
+      .card-royal:hover::after {
+        width: 100%;
+      }
+      .card-royal:hover {
+        transform: translateY(-12px);
+        border-color: rgba(197, 160, 40, 0.5);
+        background: rgba(38, 28, 22, 0.85);
+      }
+      .card-icon-royal {
+        font-size: 2.2rem;
+        color: var(--gold-antique);
+        margin-bottom: 28px;
+      }
+      .card-royal p {
+        /* border: 2px solid red; */
+        padding: 15px 0px;
+      }
+
+      /* Story - Editorial Opulent */
+      .story-opulent {
+        background: linear-gradient(125deg, #120e0a 0%, #0a0704 100%);
+        border-left: 3px solid var(--gold-antique);
+        padding: 70px;
+        display: flex;
+        gap: 70px;
+        flex-wrap: wrap;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .quote-royal {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        font-style: italic;
+        border-right: 2px solid var(--gold-antique);
+        padding-right: 40px;
+      }
+
+      /* Testimonials */
+      .testimonial-royal-card {
+        background: #17110c;
+        padding: 52px;
+        border: 1px solid rgba(197, 160, 40, 0.25);
+        transition: 0.3s;
+      }
+
+      /* CTA Regal */
+      .cta-regal {
+        background: #0c0805;
+        border: 1px solid var(--gold-antique);
+        padding: 88px 48px;
+        text-align: start;
+        position: relative;
+        border-radius: 20px;
+      }
+      .blog-con {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 20px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .blog-box-content {
+        border: 1px solid var(--gold-burnished);
+        border-radius: 20px;
+        overflow: hidden;
+        width: 100%;
+        
+      }
+      .box-img-left {
+        /* border: 2px solid goldenrod; */
+        background-image: url("https://plus.unsplash.com/premium_photo-1661410991860-4cd86e2613e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        height: 50vh;
+        background-size: cover;
+        width: 100%;
+      }
+      .box-img-right {
+        background-image: url("https://plus.unsplash.com/premium_photo-1715958889900-f5ed02e70eb2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWFuYWdpbmclMjBEaWFiZXRlcyUyMHdpdGglMjBMaWZlc3R5bGUlMjBDaGFuZ2VzfGVufDB8fDB8fHww");
+       height: 50vh;
+        background-size: cover;
+        width: 100%;
+      }
+      .box-img-left-second-div{
+        background-image: url("https://images.unsplash.com/photo-1659353888906-adb3e0041693?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+          height: 50vh;
+        background-size: cover;
+        width: 100%;
+      }
+      .box-img-right-second-div{
+        background-image: url("https://images.unsplash.com/photo-1639401122140-0233822042b5?q=80&w=2107&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+          height: 50vh;
+        background-size: cover;
+        width: 100%;
+      }
+      .main-con-text {
+        /* border: 2px solid khaki; */
+        /* background-color: red; */
+        padding: 20px 20px;
+      }
+      .date {
+        padding: 10px 0px;
+        display: flex;
+        gap: 2rem;
+      }
+      .date span {
+        display: flex;
+        gap: 10px;
+      }
+      .main-con-text h3 {
+        padding: 10px 0px;
+        /* border: 2px solid white; */
+      }
+      #icon-vision{
+        /* border: 2px solid green; */
+        font-size: 50px;
+        color: #C5A028;
+      }
+      .main-con-text p {
+        /* border: 2px solid red; */
+        padding: 10px 0px;
+      }
+      .hide-data {
+        transition: 5s ease-in;
+        display: none;
+        text-align: justify;
+      }
+      .hide-data hr{
+        margin: 10px 0px;
+  
+        border-bottom: 2px solid var(--gold-soft);
+        
+      }
+      .btn-more button {
+        /* border: 2px solid green; */
+        background-color: transparent;
+        padding: 10px 20px;
+        margin: 10px 0px;
+        display: flex;
+        gap: 10px;
+        border-radius: 20px;
+        border: 2px solid var(--gold-burnished);
+        color: var(--gold-antique);
+      }
+      .btn-more button:hover {
+        color: black;
+        background-color: var(--gold-antique);
+        cursor: pointer;
+        box-shadow: 1px 1px 5px 2px var(--gold-soft);
+      }
+      .main-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 20px 10px;
+        /* border: 2px solid green; */
+      }
+      .que-con{
+        border: 1px solid var(--gold-burnished);
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 10px 10px;
+        width: 80%;
+      }
+      .que{
+        /* border: 2px solid red; */
+        display: flex;
+        /* width: 90%; */
+        font-size: 22px;
+        padding: 20px 20px;
+        justify-content: space-between;
+      }
+      .answer{
+        /* border: 1px solid greenyellow; */
+        font-size: 22px ;
+        padding: 0px 20px;
+        display: none;
+        border-top: 1px solid var(--gold-burnished);
+        
+      }
+      .answer hr{
+        /* border-bottom: 1px solid var(--gold-burnished); */
+        margin: 10px 0px;
+        border: none;
+        height: 1px;
+      }
+      /* Contact */
+      .contact-grid-royal {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        /* border: 2px solid red; */
+      }
+      .info-card-royal {
+        background: rgba(30, 22, 18, 0.5);
+        padding: 36px;
+        border: 1px solid rgba(197, 160, 40, 0.2);
+      }
+      .info-card-royal i{
+        /* border: 2px solid gold; */
+        color: var(--gold-antique);
+        font-size: 30px;
+        padding: 10px 0px;
+      }
+      .info-card-royal a{
+        /* border: 2px solid green; */
+        text-decoration: none;
+        color: white;
+      }
+      .location-con{
+        /* border: 2px solid pink; */
+        display: flex;
+        padding: 20px 0px;
+        justify-content: center;
+      }
+      .form-royal input,
+      .form-royal textarea {
+        background: #1a130f;
+        border: 1px solid #2f241e;
+        color: #ece6df;
+        border-radius: 0;
+        padding: 16px 24px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-family: inherit;
+      }
+      .form-royal input:focus,
+      .form-royal textarea:focus {
+        border-color: var(--gold-antique);
+        outline: none;
+      }
+
+      footer {
+        background: #040202;
+        border-top: 1px solid rgba(197, 160, 40, 0.2);
+      }
+      .container-details{
+        /* border: 2px solid red; */
+        padding: 30px 0px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .contact{
+        /* border: 2px solid green; */
+        width: 30%;
+      }
+      .social-media-icon{
+        /* border: 2px solid wheat; */
+        font-size: 22px;
+        margin: 5px 0px;
+        display: flex;
+        gap: 20px;
+      }
+      .social-media-icon a{
+        color: white;
+
+      }
+      .social-media-icon a:hover{
+        color: var(--gold-antique);
+        transition: 0.2s ease-in-out;
+        transform: scale(1.2);
+        /* border: 1px solid red; */
+      }
+      .details-main-office{
+        /* border: 2px solid lawngreen; */
+        display: flex;
+        padding: 5px 0px;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .details-main-office i{
+        color:  var(--gold-antique);
+      }
+      .details-main-office p{
+        /* border: 2px solid red; */
+        display: flex;
+        gap: 10px;
+      }
+      .details-main-office a{
+        color:  white;
+        text-decoration: none;
+      }
+      .footer-bar{
+        /* border: 2px solid pink; */
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 15px;
+        /* font-size: 22px ; */
+
+      }
+      .footer-bar a{
+        color: white;
+        text-decoration: none;
+        list-style: none;
+        
+      }
+      .floating-royal {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--gold-antique);
+        width: 64px;
+        height: 64px;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0b0704;
+        font-size: 1.8rem;
+        z-index: 99;
+        transition: 0.3s;
+        text-decoration: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      }
+      @media (max-width: 968px) {
+        * {
+          max-width: 100%;
+        }
+        html {
+          overflow-y: scroll;
+        }
+        body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+        }
+        /* .navbar{
+          display: none;
+        } */
+        .container {
+          padding: 0 16px;
+          width: 100%;
+          box-sizing: border-box;
+          margin: 0 auto;
+        }
+        .hero-content h1 {
+          font-size: 3.2rem;
+        }
+        .btn-outline-royal{
+          margin: 10px;
+          /* text-align: start; */
+        }
+        .section-title-royal {
+          font-size: 2.5rem;
+        }
+        .contact-grid-royal {
+          grid-template-columns: 1fr;
+        }
+        .story-opulent {
+          padding: 20px;
+          flex-direction: column;
+          border-left: none;
+          border-top: 3px solid var(--gold-antique);
+        }
+        .nav-container{
+          /* border: 2px solid red; */
+         padding: 0px 10px;
+         margin: 0;
+          
+          /* gap: rem; */
+          /* justify-content: space-arro; */
+        }
+        .nav-links {
+          /* display: none; */
+          position:absolute;
+          flex-direction: column;
+          background-color: #040202;
+          width: 100%;
+          right: 0;
+          top: 90px;
+          padding: 20px 0px;
+          transform: translate(-100%);
+          transition: transform 0.3s ease;
+        }
+        .nav-links.active{
+          transform: translate(0px);
+
+        }
+        .mobile-menu {
+          display: block;
+          /* border: 2px solid pink; */
+        }
+        section {
+          padding: 90px 0;
+          width: 100%;
+          overflow-x: hidden;
+        }
+        .hero-regal {
+          background-attachment: scroll;
+        }
+        .hero-desc-royal {
+          max-width: 100%;
+        }
+        .hero-grid-royal {
+          gap: 30px;
+          flex-direction: column;
+        }
+        .blog-con {
+          grid-template-columns: 1fr;
+          padding: 10px 0px;
+        }
+
+        .blog-box-content {
+          width: 100% !important;
+          box-sizing: border-box;
+        }
+        .box-img-right{
+          /* border: 2px solid plum; */
+          background-position: center;
+
+        }
+        .box-img-left-second-div{
+          background-position: center;
+          
+        }
+        .box-img-right-second-div{
+          background-position: center;
+
+        }
+        .cta-regal{
+          padding: 15px 10px;
+        }
+        .main-con{
+
+          /* border: 2px solid red; */
+          padding: 0;
+        }
+        .que-con{
+          width: 100%;
+
+          /* padding: 0; */
+        }
+        .que{
+          padding: 5px 5px;
+        }
+        .answer{
+          padding: 5px 5px;
+        }
+    
+        .service-grid-royal {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .stat-royal {
+          flex-direction: column;
+          gap: 30px;
+        }
+        .container-details{
+          flex-direction: column;
+        }
+        .contact{
+          width: 100%;
+          padding: 10px 10px;
+        }
+      }
+      .gold-text {
+        color: var(--gold-antique);
+      }
+      .btn-outline-royal {
+        border: 1px solid var(--gold-antique);
+        background: transparent;
+        padding: 15px 32px;
+        border-radius: 25px;
+        color: var(--gold-antique);
+        text-decoration: none;
+        transition: 0.3s;
+        display: inline-block;
+      }
+      .btn-outline-royal:hover {
+        background: var(--gold-antique);
+        color: #0b0704;
+      }
