@@ -83,6 +83,7 @@
         font-size: 2rem;
         font-weight: 600;
         letter-spacing: 2px;
+        /* border: 2px solid red; */
         background: linear-gradient(
           135deg,
           var(--gold-antique) 0%,
@@ -92,13 +93,18 @@
         background-clip: text;
         color: transparent;
       }
-      .logo-sub {
+      .logo-main img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      /* .logo-sub {
         font-size: 0.6rem;
         letter-spacing: 4px;
         text-transform: uppercase;
         color: var(--gold-antique);
         font-weight: 300;
-      }
+      } */
       .nav-links {
         display: flex;
         gap: 56px;
@@ -124,6 +130,7 @@
         );
         color: #0b0704 !important;
         padding: 20px 36px;
+        text-decoration: none;
         border-radius: 25px;
         font-weight: 600;
         text-transform: uppercase;
@@ -748,6 +755,9 @@
           width: 100%;
           padding: 10px 10px;
         }
+         .section-eyebrow-royal{
+          font-size: 1.2rem;
+         }
       }
       .gold-text {
         color: var(--gold-antique);
