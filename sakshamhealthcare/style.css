@@ -61,7 +61,7 @@
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(197, 160, 40, 0.3);
         transition: all 0.4s;
-        padding: 20px 0;
+        padding: 10px 0;
       }
 
       .nav-container {
@@ -70,20 +70,23 @@
         align-items: center;
         max-width: 1440px;
         margin: auto;
-        padding: 0 64px;
+        padding: 0 5%;
       }
 
       .logo {
         display: flex;
-        flex-direction: column;
+        align-items: center;
         position: relative;
+        height: 100%;
       }
       .logo-main {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         font-family: "Cormorant Garamond", serif;
         font-size: 2rem;
         font-weight: 600;
         letter-spacing: 2px;
-        /* border: 2px solid red; */
         background: linear-gradient(
           135deg,
           var(--gold-antique) 0%,
@@ -92,11 +95,13 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        line-height: 1; /* Reset line-height to remove extra padding */
       }
       .logo-main img{
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
+        display: block; /* Remove inline baseline gap */
       }
       /* .logo-sub {
         font-size: 0.6rem;
@@ -107,7 +112,7 @@
       } */
       .nav-links {
         display: flex;
-        gap: 56px;
+        gap: 2vw;
         align-items: center;
       }
       .nav-links a {
@@ -121,6 +126,9 @@
       }
       .nav-links a:hover {
         color: var(--gold-antique);
+      }
+      .navbar .btn-royal {
+        padding: 12px 24px;
       }
       .btn-royal {
         background: linear-gradient(
@@ -669,7 +677,7 @@
           background-color: #040202;
           width: 100%;
           right: 0;
-          top: 90px;
+          top: 80px;
           padding: 20px 0px;
           transform: translate(-100%);
           transition: transform 0.3s ease;
