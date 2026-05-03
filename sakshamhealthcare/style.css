@@ -323,6 +323,16 @@
         /* border: 2px solid red; */
         padding: 15px 0px;
       }
+      .service-care{
+        /* border: 2px solid green; */
+        margin: 10px 0px;
+      }
+      .service-care h3{
+        padding: 10px 0px;
+      }
+       .service-care li{
+        padding: 5px 0px;
+      }
 
       /* Story - Editorial Opulent */
       .story-opulent {
